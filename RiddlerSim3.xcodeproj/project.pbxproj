@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27DB1253250F59C60018B723 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB1252250F59C60018B723 /* main.swift */; };
+		27DB125E250F59F80018B723 /* CastleClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DB125B250F59F80018B723 /* CastleClass.cpp */; };
+		27DB125F250F59F80018B723 /* PlayerClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DB125D250F59F80018B723 /* PlayerClass.cpp */; };
+		27DB1263251E99E50018B723 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DB1262251E99E50018B723 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +26,13 @@
 
 /* Begin PBXFileReference section */
 		27DB124F250F59C60018B723 /* RiddlerSim3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RiddlerSim3; sourceTree = BUILT_PRODUCTS_DIR; };
-		27DB1252250F59C60018B723 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		27DB1259250F59F70018B723 /* RiddlerSim3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RiddlerSim3-Bridging-Header.h"; sourceTree = "<group>"; };
+		27DB125A250F59F80018B723 /* CastleClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CastleClass.hpp; sourceTree = "<group>"; };
+		27DB125B250F59F80018B723 /* CastleClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CastleClass.cpp; sourceTree = "<group>"; };
+		27DB125C250F59F80018B723 /* PlayerClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayerClass.hpp; sourceTree = "<group>"; };
+		27DB125D250F59F80018B723 /* PlayerClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerClass.cpp; sourceTree = "<group>"; };
+		27DB1260250F5A520018B723 /* old main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "old main.cpp"; sourceTree = "<group>"; };
+		27DB1262251E99E50018B723 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +65,13 @@
 		27DB1251250F59C60018B723 /* RiddlerSim3 */ = {
 			isa = PBXGroup;
 			children = (
-				27DB1252250F59C60018B723 /* main.swift */,
+				27DB1260250F5A520018B723 /* old main.cpp */,
+				27DB125A250F59F80018B723 /* CastleClass.hpp */,
+				27DB125B250F59F80018B723 /* CastleClass.cpp */,
+				27DB125C250F59F80018B723 /* PlayerClass.hpp */,
+				27DB125D250F59F80018B723 /* PlayerClass.cpp */,
+				27DB1259250F59F70018B723 /* RiddlerSim3-Bridging-Header.h */,
+				27DB1262251E99E50018B723 /* main.cpp */,
 			);
 			path = RiddlerSim3;
 			sourceTree = "<group>";
@@ -94,6 +108,7 @@
 				TargetAttributes = {
 					27DB124E250F59C60018B723 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -120,7 +135,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27DB1253250F59C60018B723 /* main.swift in Sources */,
+				27DB125F250F59F80018B723 /* PlayerClass.cpp in Sources */,
+				27DB125E250F59F80018B723 /* CastleClass.cpp in Sources */,
+				27DB1263251E99E50018B723 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,8 +260,16 @@
 		27DB1257250F59C60018B723 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RiddlerSim3/RiddlerSim3-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -252,8 +277,15 @@
 		27DB1258250F59C60018B723 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RiddlerSim3/RiddlerSim3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
